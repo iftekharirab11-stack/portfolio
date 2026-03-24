@@ -566,6 +566,69 @@
 
   .social-pill:hover { border-color: var(--blue); color: var(--blue); transform: translateY(-2px); }
 
+  /* SERVICES SECTION */
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px; margin-top: 48px;
+  }
+
+  .service-card {
+    background: var(--surface);
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius);
+    padding: 28px 22px;
+    position: relative; overflow: hidden;
+    transition: all 0.3s; cursor: default;
+  }
+
+  .service-card::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--blue), #6366F1);
+    opacity: 0; transition: opacity 0.3s;
+  }
+
+  .service-card:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-6px);
+    border-color: transparent;
+  }
+
+  .service-card:hover::before { opacity: 1; }
+
+  .service-num {
+    font-family: 'Syne', sans-serif;
+    font-size: 0.72rem; font-weight: 800;
+    color: var(--blue); letter-spacing: 0.1em;
+    text-transform: uppercase; margin-bottom: 14px;
+    opacity: 0.6;
+  }
+
+  .service-icon-big { font-size: 2.2rem; margin-bottom: 14px; display: block; }
+
+  .service-title {
+    font-family: 'Syne', sans-serif; font-size: 1rem;
+    font-weight: 800; color: var(--ink); margin-bottom: 8px;
+    letter-spacing: -0.02em; line-height: 1.25;
+  }
+
+  .service-desc {
+    font-size: 0.82rem; color: var(--ink-2);
+    line-height: 1.6;
+  }
+
+  .service-badge {
+    display: inline-flex; align-items: center; gap: 5px;
+    background: linear-gradient(135deg, var(--blue-light), #EDE9FE);
+    color: var(--blue); border: 1px solid var(--blue-mid);
+    padding: 3px 10px; border-radius: 100px;
+    font-size: 0.68rem; font-weight: 700;
+    text-transform: uppercase; letter-spacing: 0.05em;
+    margin-top: 14px;
+  }
+
   /* RESPONSIVE */
   @media (max-width: 768px) {
     .hero { grid-template-columns: 1fr; gap: 40px; padding: 48px 5vw; }
@@ -598,14 +661,14 @@
   <!-- HERO -->
   <div class="hero">
     <div class="hero-content">
-      <div class="hero-badge">Available for new projects</div>
+      <div class="hero-badge">🤖 AI-Powered Growth Expert</div>
       <h1>
-        Digital Marketing<br>
-        <span class="gradient-text">Specialist</span>
+        AI &amp; Digital<br>
+        <span class="gradient-text">Expert</span>
       </h1>
       <p class="hero-tagline">
-        <strong>Helping small businesses & professionals grow on the internet</strong> —
-        through smart ads, compelling content, and high-converting digital experiences.
+        <strong>Using AI to upgrade your business on the internet</strong> —
+        smarter ads, AI-powered automation, and digital systems that work while you sleep.
       </p>
       <div class="hero-buttons">
         <button class="btn-primary" onclick="showPage('page2')">✉ Let's Work Together</button>
@@ -634,7 +697,7 @@
 
     <div class="hero-photo-wrap">
       <div class="hero-photo-card">
-        <img src="https://i.ibb.co.com/MkzwP05B/IMG-20250407-193616-1.jpg" alt="Iftekhar Mohammad" onerror="this.style.background='#EFF6FF'; this.style.display='flex'"/>
+        <img src="https://i.ibb.co.com/yc9KKqVb/IMG-20250407-193616.jpg" alt="Iftekhar Mohammad" onerror="this.style.background='#EFF6FF'; this.style.display='flex'"/>
       </div>
       <div class="hero-badge-card">
         <div class="icon">🚀</div>
@@ -650,7 +713,7 @@
   <div class="section">
     <div class="section-label">What I Do</div>
     <h2 class="section-title">Skills & Expertise</h2>
-    <p class="section-sub">Combining creativity with data-driven strategy to deliver real results for your brand.</p>
+    <p class="section-sub">Combining AI tools with digital strategy to deliver faster, smarter results for your business.</p>
 
     <div class="skills-grid">
       <div class="skill-card">
@@ -662,6 +725,16 @@
         <div class="skill-icon">✍️</div>
         <div class="skill-name">Prompt Engineering</div>
         <div class="skill-tag">Expert</div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">⚙️</div>
+        <div class="skill-name">AI Automation</div>
+        <div class="skill-tag">Time Saver</div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">🔑</div>
+        <div class="skill-name">API Key Integration</div>
+        <div class="skill-tag">Technical</div>
       </div>
       <div class="skill-card">
         <div class="skill-icon">🌐</div>
@@ -677,6 +750,16 @@
         <div class="skill-icon">📱</div>
         <div class="skill-name">Social Media Handling</div>
         <div class="skill-tag">Growth</div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">▶️</div>
+        <div class="skill-name">YouTube Account Handle</div>
+        <div class="skill-tag">Video Growth</div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">🎯</div>
+        <div class="skill-name">Lead Generation</div>
+        <div class="skill-tag">Sales Ready</div>
       </div>
       <div class="skill-card">
         <div class="skill-icon">🎬</div>
@@ -748,10 +831,7 @@
             <span class="project-tag">Audience Research</span>
             <span class="project-tag">Branding</span>
           </div>
-        </div>
-      </div>
-    </div>
-  </div>
+          <a class="project-link" href="https://iftekharirab11-stack.github.io/imi.io/" target="_blank">🔗 View Live Site →</a>
 
   <div class="section-divider"></div>
 
@@ -802,6 +882,53 @@
             <div class="review-loc">🇧🇩 Bangladesh</div>
           </div>
         </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-divider"></div>
+
+  <!-- SERVICES I DELIVER -->
+  <div class="section">
+    <div class="section-label">What You Get</div>
+    <h2 class="section-title">Services I Deliver</h2>
+    <p class="section-sub">Every service is AI-powered — faster results, smarter systems, and real business growth.</p>
+
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-num">01</div>
+        <span class="service-icon-big">🌐</span>
+        <div class="service-title">Website Build</div>
+        <p class="service-desc">Professional, fast-loading websites that convert visitors into customers — built with modern tools and AI-assisted design.</p>
+        <div class="service-badge">⚡ AI-Assisted</div>
+      </div>
+      <div class="service-card">
+        <div class="service-num">02</div>
+        <span class="service-icon-big">🎯</span>
+        <div class="service-title">Lead Generation & Sale</div>
+        <p class="service-desc">Targeted campaigns that attract ready-to-buy leads — with AI systems to capture, nurture, and convert them into paying clients.</p>
+        <div class="service-badge">📈 High ROI</div>
+      </div>
+      <div class="service-card">
+        <div class="service-num">03</div>
+        <span class="service-icon-big">📱</span>
+        <div class="service-title">Social Media Handling</div>
+        <p class="service-desc">Full account management — content creation, scheduling, engagement & growth strategy across Facebook, Instagram & YouTube.</p>
+        <div class="service-badge">🔥 Growth Focus</div>
+      </div>
+      <div class="service-card">
+        <div class="service-num">04</div>
+        <span class="service-icon-big">🤖</span>
+        <div class="service-title">AI Automation</div>
+        <p class="service-desc">Automate repetitive business tasks using AI — from customer replies to full workflow management — so you focus on what matters.</p>
+        <div class="service-badge">🧠 Smart Systems</div>
+      </div>
+      <div class="service-card">
+        <div class="service-num">05</div>
+        <span class="service-icon-big">📊</span>
+        <div class="service-title">Meta & Facebook Ads</div>
+        <p class="service-desc">Data-driven ad campaigns with AI-optimized audience targeting — maximum reach, minimum budget waste, measurable results.</p>
+        <div class="service-badge">💰 Low Budget</div>
       </div>
     </div>
   </div>
